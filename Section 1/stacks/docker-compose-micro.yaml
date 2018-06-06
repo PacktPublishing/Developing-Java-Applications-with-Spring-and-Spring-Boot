@@ -1,0 +1,70 @@
+version: '3'
+services:
+
+  passengers:
+    hostname: passengers
+    image: springfivebyexample/config
+    ports:
+      - "5000:5000"
+    networks:
+      - airline
+
+  flights:
+    hostname: flights
+    image: springfivebyexample/flights
+    ports:
+      - "50005:50005"
+    networks:
+      - airline
+
+  planes:
+    hostname: planes
+    image: springfivebyexample/planes
+    ports:
+      - "50001:50001"
+    networks:
+      - airline
+
+  bookings:
+    hostname: bookings
+    image: springfivebyexample/bookings
+    ports:
+      - "50075:50075"
+    networks:
+      - airline
+
+  payments:
+    hostname: payments
+    image: springfivebyexample/payments
+    ports:
+      - "50070:50070"
+    networks:
+      - airline
+
+  auth:
+    hostname: auth
+    image: springfivebyexample/auth
+    ports:
+      - "7777:7777"
+    networks:
+      - airline
+
+  ecommerce:
+    hostname: ecommerce
+    image: springfivebyexample/ecommerce
+    ports:
+      - "50080:50080"
+    networks:
+      - airline
+
+  mongo:
+    hostname: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - airline
+
+networks:
+  airline:
+    driver: bridge

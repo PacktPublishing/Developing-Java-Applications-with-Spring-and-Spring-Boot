@@ -1,0 +1,17 @@
+turbine:
+  stream:
+    port: 8010
+  appConfig: planes,flights,fares,bookings,passengers,mail,payments
+  clusterNameExpression: 'default'
+
+spring:
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/

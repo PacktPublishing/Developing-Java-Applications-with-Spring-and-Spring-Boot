@@ -1,0 +1,17 @@
+spring:
+  application:
+      name: gateway
+  cloud:
+    config:
+      uri: http://localhost:5000
+      label: master
+
+---
+spring:
+  profiles: docker
+  application:
+    name: gateway
+  cloud:
+    config:
+      uri: http://config:5000
+      label: master
